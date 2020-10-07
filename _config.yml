@@ -1,7 +1,7 @@
 # Site settings
 title:          STORY
 description:    "Minimal Jekyll theme for storytellers"
-baseurl:        "/tale"
+#baseurl:        "/tale"
 url:            "https://song-kyeongyong.github.io"
 
 # Google Analytics
@@ -30,6 +30,7 @@ plugins:
   - jekyll-seo-tag
   # - jemoji #Uncomment this to allow emoji in your post
 
+theme:  tale
 # Permalinks
 permalink:      /:year-:month-:day/:title
 paginate:       5
