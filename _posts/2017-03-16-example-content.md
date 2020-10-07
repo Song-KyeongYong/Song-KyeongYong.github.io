@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Example Content"
-author: "Inela"
-tags: ["jekyll", "docs", "example", "content"]
+author: "Chester"
+tags: Example
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt ornare nibh, non elementum augue tempus eget. Pellentesque tempus scelerisque iaculis. Nullam interdum ultricies nibh quis sollicitudin. Donec ornare fermentum facilisis. Ut at sem ac sem imperdiet varius a eget tortor. Nam eu augue eget orci semper maximus in eget augue. Mauris ornare, nisl ut suscipit consectetur, mi quam interdum tellus, at rutrum quam eros ultrices mi.
@@ -33,7 +33,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt orna
 - <sup>Superscript</sup>
 - <sub>Subscript</sub>
 - Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr>
-- Citation: <cite>&mdash; Inela</cite>
+- Citation: <cite>&mdash; Chester How</cite>
 {% endhighlight %}
 
 - **Bold**
@@ -43,7 +43,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt orna
 - <sup>Superscript</sup>
 - <sub>Subscript</sub>
 - Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr>
-- Citation: <cite>&mdash; Inela</cite>
+- Citation: <cite>&mdash; Chester How</cite>
 
 # Lists
 {% highlight markdown %}
@@ -64,12 +64,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt orna
 * Unordered list item 2
 * Unordered list item 3
 
-# Links #todo link na repo
+# Links
 {% highlight markdown %}
-Check out rain on [GitHub](#todo dodati link na github).
+Check out tale on [GitHub](https://github.com/chesterhow/tale).
 {% endhighlight %}
 
-Check out rain on [GitHub](#todo dodati link na github).
+Check out tale on [GitHub](https://github.com/chesterhow/tale).
 
 # Images
 {% highlight markdown %}
@@ -99,7 +99,7 @@ s = "Python syntax highlighting"
 print s
 {% endhighlight %}
 
-Adding `linenos` to the Pygments tag enables line numbers.
+Adding `linenos` to the highlight tag enables line numbers.
 
 {% highlight js  linenos %}
 // Sample javascript code

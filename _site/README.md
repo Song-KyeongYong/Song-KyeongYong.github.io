@@ -1,133 +1,129 @@
-# Rain
+# Tale
 
-Rain is a simple and clean Jekyll theme with focus on content. It's a fork of [Tale theme](https://github.com/chesterhow/tale) with additional customizations.
+[![Gem Version](https://badge.fury.io/rb/tale.svg)](https://badge.fury.io/rb/tale)
 
-![](https://github.com/inelaah/rain/blob/master/images/screenshot.png)
+Tale is a minimal Jekyll theme curated for storytellers. Checkout the demo [here](https://chesterhow.github.io/tale/).
+
+![Tale screenshot](http://i.imgur.com/pXZrtmo.png)
 
 ## Features
+- Easy installation
 - Compatible with GitHub Pages
-- Responsive design
-- Syntax highlighting
+- Responsive design (looks just as good on mobile)
+- Syntax highlighting, with the help of Pygments
 - Markdown and HTML text formatting
 - Pagination of posts
-- Related articles section
-- Links to social media
+- [Disqus comments (can be enabled if needed)](#enabling-comments)
 
+## Installation
+There are 3 ways to install this theme
 
-## Getting Started
+1. Install it as a Ruby Gem (for self-hosted sites)
+2. Install it with the `jekyll-remote-theme` plugin (for GitHub Pages hosted sites)
+3. Fork the project directly
 
-You will need to install Jekyll on your machine. Installation depends on your operating system and it is explained [here](https://jekyllrb.com/docs/installation/).
+### Ruby Gem method
+1. Add this line to your `Gemfile`:
 
-Then create a new directory and clone this repository:
-
-```bash
-mkdir rain
-cd rain
-git clone https://github.com/inelaah/rain.git
+```ruby
+gem "tale"
 ```
 
-Install all dependencies:
+2. Install the theme's gems and dependencies:
 
 ```bash
-bundle install
+$ bundle
 ```
 
-## Site Configuration
+3. In `_config.yml` add these lines:
 
-There is a configuration file `_config.yml` in root directory. You should overwrite it to fit to your needs.
+```yaml
+theme:      tale
 
-An example of `_config.yml` looks like this:
+permalink:  /:year-:month-:day/:title
+paginate:   5
+```
+
+Remove any other `theme:` lines.
+
+4. Rename `index.md` to `index.html`. Without this, the `jekyll-paginate` gem will not work.
+
+5. In `about.md`, change the `layout:` field to `post`:
+
+```Markdown
+layout: post
+```
+
+### GitHub Pages method
+1. Add these 2 lines in to your `Gemfile`:
+
+```ruby
+gem "jekyll-remote-theme"
+gem "jekyll-paginate"
+```
+
+2. Install the newly added gems:
 
 ```bash
-# Site settings
-title:          Rain
-description:    "Rain is a simple and clean Jekyll theme with focus on content."
-url:            https://github.com/inelaah/rain
+$ bundle
+```
 
-# Author
-author:
-  name:         Inela Avdic Hukic
-  email:        inelaah@gmail.com
-  url:          https://inelaah.com
+3. In `_config.yml` add these lines:
 
-# Build settings
-markdown:       kramdown
+```yaml
+remote_theme: chesterhow/tale
 
-# Assets
-sass:
-  sass_dir:     _sass
-  style:        compressed
+permalink:    /:year-:month-:day/:title
+paginate:     5
 
-# Gems
 plugins:
-  - jekyll-feed
   - jekyll-paginate
-  # - jemoji #Uncomment this to allow emoji in your post
-
-# Permalinks
-permalink:      /:year-:month-:day/:title
-paginate:       5
-
-# Related posts settings
-related_posts_section:
-  max_count:        5
-  min_common_tags:  2
-
-# Links to social media
-social:
-  email: inelaah@gmail.com
-  github: https://github.com/inelaah
-  twitter: https://twitter.com
-  linkedin: https://ba.linkedin.com/in/inela-avdic-hukic-322354131
+  - jekyll-remote-theme
 ```
 
-## Favicons
+Remove any other `theme:` or `remote_theme:` lines.
 
-It is recommended to put your own favicons:
+4. Rename `index.md` to `index.html`. Without this, the `jekyll-paginate` gem will not work.
 
-- `apple-touch-icon.png` (180x180)
-- `favicon-32x32.png` (32x32)
-- `favicon-16x16.png` (16x16)
-- `mstile-150x150.png` (150x150)
-- `android-chrome-192x192.png` (192x192)
-- `android-chrome-512x512.png` (512x512)
+5. In `about.md`, change the `layout:` field to `post`:
 
-in `/assets` directory. They're easily created via [Favicon Generator](https://realfavicongenerator.net/).
-
-
-## Related Articles
-
-Related articles section is based on article tags. For every post that you want to have this section you should define tags.
-To include related articles in the bottom of the content you should define `related_posts_section` property in configuration file.
-It contains two fields: `max_count` and `min_common_tags`:
-- `max_count` represents the maximum number of related articles shown on a single article.
-- `min_common_tags` represents the minimum number of common tags for two articles to become related articles.
-
-## Links to social media
-
-To include links to social media in the top right corner of your page you need to define `social` property.
-It contains email, GitHub, Twitter and LinkedIn fields. You can leave out any of these if you don't want them to show up on your page.
-
-## Customizing Rain theme
-
-If you want to customize Rain theme you can fork this project and make some changes. If you just want to change the style then you can find Sass files in `_sass/rain` directory.
-
-## Adding your own posts
-
-You can see an example of post structure in `_posts` directory. After you clone this project you should clean the `_posts` directory and add your own posts.
-
-## Build and serve
-
-```
-bundle exec jekyll serve
+```Markdown
+layout: post
 ```
 
-Head over to http://127.0.0.1:4000/ to see your page.
+### Fork method
+1. Fork this repository
+
+2. Delete the unnecessary files/folders: `CODE_OF_CONDUCT.md`, `LICENSE`, `README.md`, `tale.gemspec`
+
+3. Delete the `baseurl` line in `_config.yml`:
+
+```yaml
+baseurl:  "/tale"   # delete this line
+```
+
+## Usage
+Once you've installed the theme, you're ready to work on your Jekyll site. To start off, I would recommend updating `_config.yml` with your site's details.
+
+To build and serve your site, run:
+
+```bash
+$ bundle exec jekyll serve
+```
+
+And you're all set! Head over to http://127.0.0.1:4000/ to see your site in action.
+
+### Enabling Comments
+Comments are disabled by default. To enable them, look for the following line in `_config.yml` and change `jekyll-tale` to your site's Disqus id.
+
+```yml
+disqus: jekyll-tale
+```
+
+Next, add `comments: true` to the YAML front matter of the posts which you would like to enable comments for.
+
+## Contributing
+Found a bug or have a suggestion? Feel free to create an issue or make a pull request!
 
 ## License
-
-Rain is licensed under the MIT license. Check the [LICENSE](LICENSE.md) file for details.
-
-## Author
-
-[Inela Avdic Hukic](https://github.com/inelaah)
+See [LICENSE](https://github.com/chesterhow/tale/blob/master/LICENSE)
