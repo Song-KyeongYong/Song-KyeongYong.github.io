@@ -5,19 +5,21 @@
 
 html,
 body {
-  color: $default-color;
+  color: #515151;
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-family: $serif-primary;
+  font-family: "PT Sans",Helvetica,Arial,sans-serif;
   font-size: 14px;
   overflow-y: scroll;
 
   @media (min-width: 600px) {
-    font-size: 18px;
-    font-weight : 500;
+    font-size: 16px;
+    letter-spacing: -.025rem;
+    line-height : 1.42857143;
+    font-weight: 350;
   }
 }
 
