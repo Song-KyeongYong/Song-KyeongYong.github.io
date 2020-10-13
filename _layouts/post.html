@@ -1,39 +1,25 @@
 ---
 layout: default
 ---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-<div class="post">
-  <div class="post-info">
-    <span>Written by</span>
-    {% if page.author %}
-        {{ page.author }}
+  <header class="post-header">
+    {% if page.external-url %}
+      <h1 class="post-title" itemprop="name headline"><a href="{{ page.external-url }}">{{ page.title | escape }} &rarr;</a></h1>
     {% else %}
-        {{ site.author.name }}
+      <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
     {% endif %}
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{% include date.html date=page.date %}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}{% if page.categories != empty or page.tags != empty %}{% include category_links.html categories=page.categories tags=page.tags %}{% endif %}</p>
+  </header>
 
-    {% if page.date %}
-      <br>
-      <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
-    {% endif %}
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
   </div>
 
-  <h1 class="post-title">{{ page.title }}</h1>
-  <div class="post-line"></div>
-
-  {{ content }}
-</div>
-
-{% if page.comments %}
-  {% include disqus_comments.html %}
-{% endif %}
-
-<div class="pagination">
-  {% if page.next.url %}
-    <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
-  {% endif %}
-  {% if page.previous.url %}
-    <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
+  {% if site.comments == true and page.comments != false %}
+    <div class="post-comments" itemprop="comment">
+      {% include custom_comments_provider.html %}
+    </div>
   {% endif %}
 
-  <a href="#" class="top">Top</a>
-</div>
+</article>
