@@ -21,6 +21,10 @@
 <lastmod>2017-01-05T00:00:00+00:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2020/10/14/post_1/</loc>
+<lastmod>2020-10-14T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -40,5 +44,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/junk/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/posts/2/</loc>
 </url>
 </urlset>
