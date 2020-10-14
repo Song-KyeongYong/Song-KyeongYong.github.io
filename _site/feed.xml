@@ -5,7 +5,7 @@
   
   <link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" />
-  <updated>2020-10-14T10:07:40+00:00</updated>
+  <updated>2020-10-14T11:51:46+00:00</updated>
   <id>http://localhost:4000//</id>
 
   
@@ -46,7 +46,7 @@
 &lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;TML을 해석해서 DOM Tree를 만들고, CSS를 해석해서 역시 CSS Tree(CSS Object Model)을 만듭니다. 이 과정에서 Parsing 과정이 필요하며 토큰 단위로 해석되는 방식은 일반적인 소스코드의 컴파일 과정과 유사합니다.
+&lt;p&gt;HTML을 해석해서 DOM Tree를 만들고, CSS를 해석해서 CSS Tree(CSS Object Model)을 만듭니다. 이 과정에서 Parsing 과정이 필요하며 토큰 단위로 해석되는 방식은 일반적인 소스코드의 컴파일 과정과 유사합니다.&lt;br /&gt;
 &lt;br /&gt;DOM Tree와 CSS Tree, 이 두 개는 연관되어 있으므로 Render Tree로 다시 조합되어 화면에 어떻게 배치할지 크기와 위치 정보를 담고 있습니다. 이후에 이렇게 구성된 Render Tree정보를 통해서 화면에 어떤 부분에 어떻게 색칠을 할지 Painting 과정을 거치게 됩니다.&lt;/p&gt;</content>
 
       
@@ -68,7 +68,7 @@
       
 
       
-        <summary type="html">WEB을 통해서 전달되는 데이터는 어딘가에서 해석되어야 합니다. 서버에서 전송한 데이터(HTML)가 클라이언트에 도착해야 할 곳은 Browser입니다. Browser에는 데이터를 해석해주는 Parser와 데이터를 화면에 표현해주는 Rendering Engine이 포함되어 있습니다. Safari 브라우저에서 실행되는 webkit 렌더링엔진의 처리과정 TML을 해석해서 DOM Tree를 만들고, CSS를 해석해서 역시 CSS Tree(CSS Object Model)을 만듭니다. 이 과정에서 Parsing 과정이 필요하며 토큰 단위로 해석되는 방식은 일반적인 소스코드의 컴파일 과정과 유사합니다. DOM Tree와 CSS Tree, 이 두 개는 연관되어 있으므로 Render Tree로 다시 조합되어 화면에 어떻게 배치할지 크기와 위치 정보를 담고 있습니다. 이후에 이렇게 구성된 Render Tree정보를 통해서 화면에 어떤 부분에 어떻게 색칠을 할지 Painting 과정을 거치게 됩니다.</summary>
+        <summary type="html">WEB을 통해서 전달되는 데이터는 어딘가에서 해석되어야 합니다. 서버에서 전송한 데이터(HTML)가 클라이언트에 도착해야 할 곳은 Browser입니다. Browser에는 데이터를 해석해주는 Parser와 데이터를 화면에 표현해주는 Rendering Engine이 포함되어 있습니다. Safari 브라우저에서 실행되는 webkit 렌더링엔진의 처리과정 HTML을 해석해서 DOM Tree를 만들고, CSS를 해석해서 CSS Tree(CSS Object Model)을 만듭니다. 이 과정에서 Parsing 과정이 필요하며 토큰 단위로 해석되는 방식은 일반적인 소스코드의 컴파일 과정과 유사합니다. DOM Tree와 CSS Tree, 이 두 개는 연관되어 있으므로 Render Tree로 다시 조합되어 화면에 어떻게 배치할지 크기와 위치 정보를 담고 있습니다. 이후에 이렇게 구성된 Render Tree정보를 통해서 화면에 어떤 부분에 어떻게 색칠을 할지 Painting 과정을 거치게 됩니다.</summary>
       
 
       
