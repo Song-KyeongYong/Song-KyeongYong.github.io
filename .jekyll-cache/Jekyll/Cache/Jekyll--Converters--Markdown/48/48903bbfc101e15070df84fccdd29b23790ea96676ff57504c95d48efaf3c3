@@ -1,0 +1,16 @@
+I"j<p>WEB을 통해서 전달되는 데이터는 어딘가에서 해석되어야 합니다. 서버에서 전송한 데이터(HTML)가 클라이언트에 도착해야 할 곳은 <strong>Browser</strong>입니다. Browser에는 데이터를 해석해주는 <strong>Parser</strong>와 데이터를 화면에 표현해주는 <strong>Rendering Engine</strong>이 포함되어 있습니다.<br /><br /><br /><br /></p>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/68091108/95971257-ed35e380-0e4b-11eb-9c42-f8b488de66e2.png" alt="kingdom" title="WEB KIT FLOW" />
+</p>
+<p align="center">
+<span style="color:gray;font-size: 1em; text-align:center;">Safari 브라우저에서 실행되는 webkit 렌더링엔진의 처리과정</span>
+</p>
+<p><br /></p>
+
+<p>TML을 해석해서 DOM Tree를 만들고, CSS를 해석해서 역시 CSS Tree(CSS Object Model)을 만듭니다. 이 과정에서 Parsing 과정이 필요하며 토큰 단위로 해석되는 방식은 일반적인 소스코드의 컴파일 과정과 유사합니다.
+DOM Tree와 CSS Tree, 이 두 개는 연관되어 있으므로 Render Tree로 다시 조합되어 화면에 어떻게 배치할지 크기와 위치 정보를 담고 있습니다.</p>
+
+<p>이후에 이렇게 구성된 Render Tree정보를 통해서 화면에 어떤 부분에 어떻게 색칠을 할지 Painting과정을 거치게 됩니다.</p>
+
+:ET

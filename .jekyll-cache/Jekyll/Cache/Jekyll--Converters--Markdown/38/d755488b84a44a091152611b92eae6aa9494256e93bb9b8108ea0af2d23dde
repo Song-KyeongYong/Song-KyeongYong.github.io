@@ -1,0 +1,8 @@
+I"3<p>WEB을 통해서 전달되는 데이터는 어딘가에서 해석되어야 합니다. 서버에서 전송한 데이터(HTML)가 클라이언트에 도착해야 할 곳은 <strong>Browser</strong>입니다. Browser에는 데이터를 해석해주는 <strong>Parser</strong>와 데이터를 화면에 표현해주는 <strong>Rendering Engine</strong>이 포함되어 있습니다.<br /><br /><br /><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/68091108/95971257-ed35e380-0e4b-11eb-9c42-f8b488de66e2.png" alt="webkitflow" title="Safari 브라우저에서 실행되는 webkit 렌더링엔진의 처리과정" /></p>
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/68091108/95971257-ed35e380-0e4b-11eb-9c42-f8b488de66e2.png" alt="kingdom" width="50%" height="50%" />
+</p>
+
+:ET
