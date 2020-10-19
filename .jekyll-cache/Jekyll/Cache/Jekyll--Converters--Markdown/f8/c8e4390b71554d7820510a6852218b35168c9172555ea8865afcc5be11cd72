@@ -1,0 +1,33 @@
+I"�<h3>CSS의 구성</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>span {
+color : red;
+}
+</code></pre></div></div>
+<p><br /></p>
+
+<h3>Style을 HTML에 적용하는 세 가지 방법</h3>
+
+<ol>
+  <li><strong>inline</strong>
+HTML태그 안에 적용하여, 다른 CSS파일과 비교하여 가장 높은 우선순위를 갖습니다.
+    <ul>
+      <li>span : selector (선택자)</li>
+      <li>color : property</li>
+      <li>red : value</li>
+    </ul>
+  </li>
+</ol>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/68091108/95971257-ed35e380-0e4b-11eb-9c42-f8b488de66e2.png" alt="kingdom" title="WEB KIT FLOW" />
+</p>
+<p align="center">
+<span style="color:gray;font-size: 1em; text-align:center;">Safari 브라우저에서 실행되는 webkit 렌더링엔진의 처리과정</span>
+</p>
+<p><br /></p>
+
+<p>HTML을 해석해서 DOM Tree를 만들고, CSS를 해석해서 CSS Tree(CSS Object Model)을 만듭니다. 이 과정에서 Parsing 과정이 필요하며 토큰 단위로 해석되는 방식은 일반적인 소스코드의 컴파일 과정과 유사합니다.<br />
+<br />DOM Tree와 CSS Tree, 이 두 개는 연관되어 있으므로 Render Tree로 다시 조합되어 화면에 어떻게 배치할지 크기와 위치 정보를 담고 있습니다. 이후에 이렇게 구성된 Render Tree정보를 통해서 화면에 어떤 부분에 어떻게 색칠을 할지 Painting 과정을 거치게 됩니다.</p>
+
+:ET

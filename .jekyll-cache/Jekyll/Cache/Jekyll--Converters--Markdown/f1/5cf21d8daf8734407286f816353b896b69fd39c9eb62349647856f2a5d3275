@@ -1,0 +1,67 @@
+I"�<h3>CSS의 구성</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">span</span> <span class="p">{</span>
+<span class="nl">color</span> <span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>span : selector (선택자)</li>
+  <li>color : property</li>
+  <li>red : value
+<br /><br /></li>
+</ul>
+
+<h3>Style을 HTML에 적용하는 세 가지 방법<br /></h3>
+
+<ol>
+  <li>
+    <p><strong>inline</strong><br />
+<strong>HTML태그 안</strong>에 적용함으로써, 다른 CSS파일과 비교하여 가장 높은 우선순위를 갖습니다.<br /><br />
+<code class="language-plaintext highlighter-rouge">&lt;p style="border:1px solid gray;color:red;font-size:2em;"&gt;</code><br /><br /><br /></p>
+  </li>
+  <li>
+    <p><strong>internal</strong><br />
+<strong>Style 태그</strong>로 지정합니다. 별도의 CSS파일을 관리하지 않아도 되며 서버에 CSS파일을 부르기 위해  브라우저가 요청을 보낼 필요가 없습니다. 하지만 구조와 스타일이 섞이게 되므로 유지보수가 어렵습니다.</p>
+  </li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+<span class="nt">p</span>  <span class="p">{</span>
+  <span class="nl">font-size</span> <span class="p">:</span> <span class="m">2em</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span><span class="m">1px</span> <span class="nb">solid</span> <span class="no">gray</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<p><strong>3. external</strong><br />
+<strong>외부파일</strong>(.css)로 지정하는 방식입니다. CSS 코드가 아주 짧지 않다면 가급적 이 방법으로 구현하는 것이 가장 좋습니다. 현업에서는 여러개의 CSS 파일로 분리하고 이를 합쳐서 서비스에서 사용하기도 합니다. internal 코드와 같은 css코드를 구현하고, style.css와 같은 별도 파일로 만듭니다. <br /><br />  이후에 아래처럼 link태그로 추가하면 됩니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"style.css"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+                <span class="nt">&lt;ul&gt;</span>
+                    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+                    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+                    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+                    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;/ul&gt;</span>
+            <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+:ET

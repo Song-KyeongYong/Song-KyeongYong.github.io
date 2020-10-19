@@ -5,7 +5,7 @@
   
   <link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" />
-  <updated>2020-10-19T02:35:31+00:00</updated>
+  <updated>2020-10-19T14:04:59+00:00</updated>
   <id>http://localhost:4000//</id>
 
   
@@ -24,6 +24,107 @@
     </author>
   
 
+  
+  
+    <entry>
+      
+      <title type="html">CSS 구성과 특징</title>
+      
+      
+      <link href="http://localhost:4000/2020/10/19/post_3/" rel="alternate" type="text/html" title="CSS 구성과 특징" />
+      
+      <published>2020-10-19T00:00:00+00:00</published>
+      <updated>2020-10-19T00:00:00+00:00</updated>
+      <id>http://localhost:4000/2020/10/19/post_3</id>
+      <content type="html" xml:base="http://localhost:4000/2020/10/19/post_3/">&lt;h3&gt;CSS의 구성&lt;/h3&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;span : selector (선택자)&lt;/li&gt;
+  &lt;li&gt;color : property&lt;/li&gt;
+  &lt;li&gt;red : value
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Style을 HTML에 적용하는 세 가지 방법&lt;br /&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;1. inline&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;HTML태그 안&lt;/strong&gt;에 적용함으로써, 다른 CSS파일과 비교하여 가장 높은 우선순위를 갖습니다.&lt;br /&gt;&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;p style=&quot;border:1px solid gray;color:red;font-size:2em;&quot;&amp;gt;&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. internal&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;Style 태그&lt;/strong&gt;로 지정합니다. 별도의 CSS파일을 관리하지 않아도 되며 서버에 CSS파일을 부르기 위해  브라우저가 요청을 보낼 필요가 없습니다. 하지만 구조와 스타일이 섞이게 되므로 유지보수가 어렵습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;gray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. external&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;외부파일&lt;/strong&gt;(.css)로 지정하는 방식입니다. CSS 코드가 아주 짧지 않다면 가급적 이 방법으로 구현하는 것이 가장 좋습니다. 현업에서는 여러개의 CSS 파일로 분리하고 이를 합쳐서 서비스에서 사용하기도 합니다. internal 코드와 같은 css코드를 구현하고, style.css와 같은 별도 파일로 만듭니다. &lt;br /&gt;&lt;br /&gt;  이후에 아래처럼 link태그로 추가하면 됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;style.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+inline은 별도의 우선순위를 갖지만, &lt;strong&gt;internal 과 external은 우선순위가 동등&lt;/strong&gt;합니다. 따라서 겹치는 선언이 있을 경우 나중에 선언된 속성이 반영됩니다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+        <author>
+            <name>송경용</name>
+          
+          
+        </author>
+      
+
+      
+
+      
+
+      
+        <summary type="html">CSS의 구성 span { color : red; } span : selector (선택자) color : property red : value Style을 HTML에 적용하는 세 가지 방법 1. inline HTML태그 안에 적용함으로써, 다른 CSS파일과 비교하여 가장 높은 우선순위를 갖습니다. &amp;lt;p style=&quot;border:1px solid gray;color:red;font-size:2em;&quot;&amp;gt; 2. internal Style 태그로 지정합니다. 별도의 CSS파일을 관리하지 않아도 되며 서버에 CSS파일을 부르기 위해 브라우저가 요청을 보낼 필요가 없습니다. 하지만 구조와 스타일이 섞이게 되므로 유지보수가 어렵습니다. &amp;lt;head&amp;gt; &amp;lt;style&amp;gt; p { font-size : 2em; border:1px solid gray; color: red; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; 3. external 외부파일(.css)로 지정하는 방식입니다. CSS 코드가 아주 짧지 않다면 가급적 이 방법으로 구현하는 것이 가장 좋습니다. 현업에서는 여러개의 CSS 파일로 분리하고 이를 합쳐서 서비스에서 사용하기도 합니다. internal 코드와 같은 css코드를 구현하고, style.css와 같은 별도 파일로 만듭니다.   이후에 아래처럼 link태그로 추가하면 됩니다. &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt; &amp;lt;p&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; inline은 별도의 우선순위를 갖지만, internal 과 external은 우선순위가 동등합니다. 따라서 겹치는 선언이 있을 경우 나중에 선언된 속성이 반영됩니다.</summary>
+      
+
+      
+      
+    </entry>
+  
   
   
     <entry>
