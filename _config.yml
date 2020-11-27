@@ -17,7 +17,7 @@ title: BLOG
 author: 송경용
 description: "SKY's BLOG"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://song-kyeongyong.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://ddraa.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 lang: en
 timezone: UTC
 exclude:
