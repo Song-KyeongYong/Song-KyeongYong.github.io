@@ -10,9 +10,8 @@
 
 .site-title {
   font-size: 26px;
-  font-weight: 300;
-  line-height: 56px;
-  letter-spacing: -1px;
+  font-weight: 400;
+  line-height: 60px;
   margin-bottom: 0;
   float: left;
 
@@ -48,8 +47,6 @@
   }
 }
 
-
-
 /**
  * Site footer
  */
@@ -59,8 +56,6 @@
   color: $grey-color;
   text-align: center;
 }
-
-
 
 /**
  * Page content
@@ -138,8 +133,6 @@
   }
 }
 
-
-
 /**
  * Posts
  */
@@ -192,8 +185,6 @@
     }
   }
 }
-
-
 
 /**
  * Pagination
