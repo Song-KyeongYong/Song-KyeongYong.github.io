@@ -261,73 +261,81 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <p><a href="https://www.acmicpc.net/problem/1941">https://www.acmicpc.net/problem/1941</a><br>
+      <p><a href="https://www.acmicpc.net/problem/18809">https://www.acmicpc.net/problem/18809</a><br>
 <br></p>
 <h3 class="mume-header" id="algorithm">Algorithm</h3>
 
 <ol>
-<li>&apos;&#xC784;&#xB3C4;&#xC5F0;&#xD30C;&apos;&#xB294; 4&#xBA85;&#xC774; &#xB118;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xCD1D; 7&#xBA85;&#xC758; &#xD559;&#xC0DD;&#xB4E4;&#xB85C; &#xAD6C;&#xC131;</li>
-<li>&#xB2F4;&#xC740; &#xD559;&#xC0DD;&#xB4E4;&#xC744; &#xC0C1;&#xB300;&#xB85C; &#xC0C1;&#xD558;&#xC88C;&#xC6B0; &#xC11C;&#xB85C; &#xC778;&#xC811;&#xD55C;&#xC9C0; &#xD655;&#xC778;<br>
+<li>&#xCD08;&#xB85D;&#xC0C9; &#xBC30;&#xC591;&#xC561;&#xACFC; &#xBE68;&#xAC04;&#xC0C9; &#xBC30;&#xC591;&#xC561;&#xC744; &#xBFCC;&#xB9B4; &#xC218; &#xC788;&#xB294; &#xBAA8;&#xB4E0; &#xC870;&#xD569;&#xC744; &#xAD6C;&#xD55C;&#xB2E4;.</li>
+<li>&#xAC01;&#xAC01;&#xC758; &#xACBD;&#xC6B0;&#xC5D0; &#xB300;&#xD574; &#xBC30;&#xC591;&#xC561;&#xC744; &#xD37C;&#xB728;&#xB9AC;&#xBA70; &#xD53C;&#xC6B8; &#xC218; &#xC788;&#xB294; &#xAF43;&#xC744; &#xC13C;&#xB2E4;.</li>
+<li>&#xD53C;&#xC6B8; &#xC218; &#xC788;&#xB294; &#xAF43;&#xC758; &#xCD5C;&#xB300; &#xAC1C;&#xC218;&#xB97C; &#xCD9C;&#xB825;&#xD55C;&#xB2E4;.<br>
 <br></li>
 </ol>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> point<span class="token punctuation">,</span> yc<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">global</span> ans
-    <span class="token keyword">if</span> yc <span class="token operator">&gt;=</span> <span class="token number">4</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span>
-    <span class="token keyword">if</span> c <span class="token operator">==</span> <span class="token number">7</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> check<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            ans <span class="token operator">+=</span> <span class="token number">1</span>
-        <span class="token keyword">return</span>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">for</span> comb <span class="token keyword">in</span> combinations<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>spot<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> G <span class="token operator">+</span> R<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    comb <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span>comb<span class="token punctuation">)</span>
 
+    <span class="token keyword">for</span> g <span class="token keyword">in</span> combinations<span class="token punctuation">(</span>comb<span class="token punctuation">,</span> G<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        g <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span>
+        r <span class="token operator">=</span> comb <span class="token operator">-</span> g
 
-    <span class="token keyword">for</span> cur <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>point<span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        x <span class="token operator">=</span> cur <span class="token operator">//</span> <span class="token number">5</span>
-        y <span class="token operator">=</span> cur <span class="token operator">%</span> <span class="token number">5</span>
+        MAX <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>MAX<span class="token punctuation">,</span> spread<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><h3 class="mume-header" id="key-point">Key Point</h3>
 
-        Set<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cur<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> board<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;Y&apos;</span><span class="token punctuation">:</span>
-            dfs<span class="token punctuation">(</span>c <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> cur <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> yc <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            dfs<span class="token punctuation">(</span>c <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> cur <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> yc<span class="token punctuation">)</span>
-        Set<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>cur<span class="token punctuation">)</span>
-</pre><br>
-<p>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<strong>KEY POINT</strong></p>
 <ul>
-<li>
-<p>2&#xCC28;&#xC6D0; &#xBC30;&#xC5F4;&#xC758; 1&#xCC28;&#xC6D0; &#xBC30;&#xC5F4; &#xD45C;&#xAE30;&#xBC95;<br>
-x = point // 5, y = point % 5<br>
-<br></p>
-</li>
-<li>
-<p>&#xADF8;&#xB798;&#xD504;&#xC758; &#xC624;&#xB984;&#xCC28;&#xC21C;&#xC801; &#xC811;&#xADFC; (1, 2, 24 -&gt; 1, 3, 4)<br>
-&#xAC01; &#xC7AC;&#xADC0;&#xB9C8;&#xB2E4; &#xD604;&#xC7AC; &#xC9C0;&#xC810;&#xC73C;&#xB85C;&#xBD80;&#xD130; for&#xBB38; &#xD0D0;&#xC0C9;</p>
-</li>
+<li>&#xC88C;&#xD45C;&#xB4E4;&#xC758; &#xC870;&#xD569;&#xC740; combinations(range(len(spot)) &#xC640; &#xAC19;&#xC774; List &#xC778;&#xB371;&#xC2A4; &#xC870;&#xD569;&#xC73C;&#xB85C; &#xAD6C;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>set&#xC744; &#xD65C;&#xC6A9;&#xD558;&#xC5EC; &#xC870;&#xD569;&#xC744; &#xAD6C;&#xD558;&#xB294; &#xAC83;&#xC740; &#xD6A8;&#xC728;&#xC801;&#xC774;&#xB2E4;.</li>
 </ul>
 <br>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">check</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    queue <span class="token operator">=</span> deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>Set<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># start</span>
-    visited <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token boolean">False</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-    visited<span class="token punctuation">[</span>Set<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+<br>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">spread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tboard <span class="token operator">=</span> copy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span>board<span class="token punctuation">)</span>
+    count <span class="token operator">=</span> <span class="token number">0</span>
 
-    count <span class="token operator">=</span> <span class="token number">1</span>
-    <span class="token keyword">while</span> queue<span class="token punctuation">:</span>
-        index <span class="token operator">=</span> queue<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        tx <span class="token operator">=</span> index <span class="token operator">//</span> <span class="token number">5</span>
-        ty <span class="token operator">=</span> index <span class="token operator">%</span> <span class="token number">5</span>
-        <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            nx<span class="token punctuation">,</span> ny <span class="token operator">=</span> tx <span class="token operator">+</span> dx<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> ty <span class="token operator">+</span> dy<span class="token punctuation">[</span>k<span class="token punctuation">]</span>
-            Next <span class="token operator">=</span> nx <span class="token operator">*</span> <span class="token number">5</span> <span class="token operator">+</span> ny
-            <span class="token keyword">if</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> nx <span class="token operator">&lt;</span> <span class="token number">5</span> <span class="token keyword">and</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> ny <span class="token operator">&lt;</span> <span class="token number">5</span> <span class="token keyword">and</span> <span class="token keyword">not</span> visited<span class="token punctuation">[</span>Next<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> Next <span class="token keyword">in</span> Set<span class="token punctuation">:</span>
-                    visited<span class="token punctuation">[</span>Next<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
-                    count <span class="token operator">+=</span> <span class="token number">1</span>
-                    queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>Next<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> count <span class="token operator">==</span> <span class="token number">7</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token boolean">True</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token boolean">False</span>
-</pre>
+    Gq <span class="token operator">=</span> deque<span class="token punctuation">(</span><span class="token punctuation">[</span>spot<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token keyword">for</span> index <span class="token keyword">in</span> g<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    Rq <span class="token operator">=</span> deque<span class="token punctuation">(</span><span class="token punctuation">[</span>spot<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token keyword">for</span> index <span class="token keyword">in</span> r<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> x<span class="token punctuation">,</span> y <span class="token keyword">in</span> Gq<span class="token punctuation">:</span>
+        tboard<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> x<span class="token punctuation">,</span> y <span class="token keyword">in</span> Rq<span class="token punctuation">:</span>
+        tboard<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">while</span> Gq <span class="token keyword">and</span> Rq<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>Gq<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            x<span class="token punctuation">,</span> y <span class="token operator">=</span> Gq<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> tboard<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;F&apos;</span><span class="token punctuation">:</span>
+                <span class="token keyword">continue</span>
+
+            <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                nx<span class="token punctuation">,</span> ny <span class="token operator">=</span> x <span class="token operator">+</span> dx<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> y <span class="token operator">+</span> dy<span class="token punctuation">[</span>k<span class="token punctuation">]</span>
+                <span class="token keyword">if</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> nx <span class="token operator">&lt;</span> N <span class="token keyword">and</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> ny <span class="token operator">&lt;</span> M <span class="token keyword">and</span> tboard<span class="token punctuation">[</span>nx<span class="token punctuation">]</span><span class="token punctuation">[</span>ny<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                    tboard<span class="token punctuation">[</span>nx<span class="token punctuation">]</span><span class="token punctuation">[</span>ny<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&apos;G&apos;</span>
+                    Gq<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>nx<span class="token punctuation">,</span> ny<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>Rq<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            x<span class="token punctuation">,</span> y <span class="token operator">=</span> Rq<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                nx<span class="token punctuation">,</span> ny <span class="token operator">=</span> x <span class="token operator">+</span> dx<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> y <span class="token operator">+</span> dy<span class="token punctuation">[</span>k<span class="token punctuation">]</span>
+                <span class="token keyword">if</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> nx <span class="token operator">&lt;</span> N <span class="token keyword">and</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> ny <span class="token operator">&lt;</span> M<span class="token punctuation">:</span>
+                    <span class="token keyword">if</span> tboard<span class="token punctuation">[</span>nx<span class="token punctuation">]</span><span class="token punctuation">[</span>ny<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;G&apos;</span><span class="token punctuation">:</span>
+                        tboard<span class="token punctuation">[</span>nx<span class="token punctuation">]</span><span class="token punctuation">[</span>ny<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&apos;F&apos;</span> <span class="token comment"># flower</span>
+                        count <span class="token operator">+=</span> <span class="token number">1</span>
+                    <span class="token keyword">elif</span> tboard<span class="token punctuation">[</span>nx<span class="token punctuation">]</span><span class="token punctuation">[</span>ny<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                        tboard<span class="token punctuation">[</span>nx<span class="token punctuation">]</span><span class="token punctuation">[</span>ny<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+                        Rq<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>nx<span class="token punctuation">,</span> ny<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> x<span class="token punctuation">,</span> y <span class="token keyword">in</span> Gq<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> tboard<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;G&apos;</span><span class="token punctuation">:</span> <span class="token comment"># expired</span>
+                tboard<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">return</span> count
+</pre><h3 class="mume-header" id="key-point-1">Key Point</h3>
+
+<ul>
+<li>&#xBC30;&#xC591;&#xC561;&#xC774; &#xB9CC;&#xB098; &#xAF43;&#xC774; &#xD53C;&#xBA74; &#xADF8; &#xC9C0;&#xC810;&#xC5D0;&#xC11C;&#xB294; &#xB354; &#xC774;&#xC0C1; &#xD0D0;&#xC0C9;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</li>
+<li>&#xBE68;&#xAC04;&#xC0C9; &#xBC30;&#xC591;&#xC561;&#xC774; &#xCD08;&#xB85D;&#xC0C9; &#xBC30;&#xC591;&#xC561;&#xC744; &#xB9CC;&#xB098;&#xC9C0; &#xBABB;&#xD588;&#xB2E4;&#xBA74; &#xB9CC;&#xB8CC;&#xC2DC;&#xD0A8;&#xB2E4;.</li>
+<li>&#xD604;&#xC7AC; &#xC704;&#xCE58;&#xC5D0; &#xAF43;&#xC774; &#xD53C;&#xC5B4;&#xC788;&#xB2E4;&#xBA74; CONTINUE.</li>
+</ul>
+
       </div>
       
       
